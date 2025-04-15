@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanduri chicken Recipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/010/913/630/large_2x/chicken-tikka-on-the-plate-and-white-background-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            margin-top:10%;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%; /* Adjust width for responsiveness */
+            max-width: 350px;
+            margin: 20px;
+            margin-top: 60px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 2px solid black;
+            box-shadow: 0 0 15px black;
+            border-radius: 8px;
+            float: left;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color:maroon ;
+            margin-top: 0%;
+        }
+
+        .recipe-image img {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color:maroon;
+        }
+
+        ul,
+        ol {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Style for the right-side buttons */
+        .right-side-buttons {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-direction: row; /* Stack buttons vertically */
+        }
+
+        .right-side-buttons button,
+        .right-side-buttons img {
+            width: 60px; /* Maintain consistent size for images */
+            height: 40px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .right-side-buttons button {
+            background-color: #3dabe2;
+            color: #ffffff;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%; /* Ensure buttons fill the container width */
+        }
+
+        .right-side-buttons button:hover {
+            background-color: #32c045;
+        }
+        #likeButton {
+    filter: invert(25%) sepia(100%) saturate(2330%) hue-rotate(192deg) brightness(91%) contrast(101%);
+}
+
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+                margin: 20px auto;
+                float: none; /* Disable float on smaller screens */
+            }
+
+            .right-side-buttons {
+                position: relative;
+                margin: 20px auto;
+                width: 80%;
+                justify-content: space-around;
+                flex-direction: row; /* Revert to row layout on smaller screens */
+            }
+
+            .right-side-buttons button,
+            .right-side-buttons img {
+                width: 50px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                margin: 10px auto;
+                padding: 15px;
+            }
+
+            .right-side-buttons {
+                width: 100%;
+                gap: 5px;
+            }
+
+            .right-side-buttons button,
+            .right-side-buttons img {
+                width: 45px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="right-side-buttons">
+        <img src="https://img.icons8.com/ios-filled/50/000000/facebook-like.png" alt="Like" id="likeButton">
+        <a href="nonveg.html"><button id="backButton">Back</button></a>
+        <a href="Non1.html"><button id="nextButton">Next</button></a>
+    </div>
+
+    <!--Main Container-->
+    <div class="container">
+        <h1>Tanduri chicken</h1>
+
+        <!-- Recipe Ingredients -->
+      <div class="recipe-ingredients">
+            <h2>Ingredients</h2>
+            <ul>
+               <li> 500g chicken (cut into pieces)</li>
+                <li>1 cup yogurt</li>
+                    <li>2 tbsp tandoori masala</li>
+                        <li>1 tbsp ginger-garlic paste</li>
+                            <li>2 tbsp lemon juice</li>
+
+                </ul>
+        </div>
+
+        <!-- Instructions Section -->
+        <div class="recipe-instructions">
+            <h2>Instructions</h2>
+            <ol>
+                <li>Marinate chicken with yogurt, tandoori masala, ginger-garlic paste, and lemon juice.</li>
+                    <li>Let it sit for at least 1-2 hours.</li>
+                        <li>Preheat the oven to 200°C (400°F).</li>
+                            <li>Place the marinated chicken on a baking tray.</li>
+                                <li>Bake for 25-30 minutes until cooked and slightly charred.</li>
+
+
+
+
+
+
+
+            </ol>
+        </div>
+    </div>
+
+
+    <script>
+
+        document.getElementById('likeButton').addEventListener('click', () => {
+            alert('Like button clicked');
+        });
+
+        document.getElementById('backButton').addEventListener('click', () => {
+            alert('Back button clicked');
+        });
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            alert('Next button clicked');
+        });
+    </script>
+</body>
+</html>

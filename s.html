@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #e3d91c;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #a1a90c;
+        }
+
+        @media (max-width: 768px) {
+            button {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Recipe</h1>
+        <input type="text" id="recipeName" placeholder="Recipe Name" required />
+        <textarea id="recipeIngredients" placeholder="Ingredients (comma separated)" required></textarea>
+        <textarea id="recipeInstructions" placeholder="Instructions" required></textarea>
+        <a href="s2.html"><button id="saveRecipe">Save Recipe</button></a>
+    </div>
+
+    <script>
+        document.getElementById('saveRecipe').addEventListener('click', function () {
+            const name = document.getElementById('recipeName').value;
+            const ingredients = document.getElementById('recipeIngredients').value;
+            const instructions = document.getElementById('recipeInstructions').value;
+
+            if (name && ingredients && instructions) {
+                const newRecipe = { name, ingredients, instructions };
+
+                let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+                recipes.push(newRecipe);
+                localStorage.setItem('recipes', JSON.stringify(recipes));
+
+                document.getElementById('recipeName').value = '';
+                document.getElementById('recipeIngredients').value = '';
+                document.getElementById('recipeInstructions').value = '';
+
+                alert('Recipe saved!');
+
+                // Redirect to view recipes page
+                window.location.href = 'view-recipes.html';
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

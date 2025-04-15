@@ -1,0 +1,391 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food List</title>
+    <style>
+        /* Existing CSS */
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://thumbs.dreamstime.com/z/sushi-japanese-food-white-japanese-plate-white-background-sushi-japanese-food-white-japanese-plate-white-317241517.jpg?ct=jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; /* Center the background image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(248, 243, 243, 0.7); /* More transparent background */
+    border: 2px solid rgb(168, 80, 80); /* Black border */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Enhanced black box shadow */
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+
+        
+        h1 {
+            font-size: 28px; /* Increased font-size */
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-in-out;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            font-size: 20px; /* Increased font-size */
+            margin: 15px 0; /* Increased margin */
+            color: #050101;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+       
+        .food-container {
+            display: flex;
+            align-items: center;
+        }
+
+      .emoji {
+            font-size: 80px; /* इमोजी का आकार */
+            margin-right: 10px; /* इमोजी और टेक्स्ट के बीच का अंतर */
+        }
+
+      .food-name {
+            font-size: 20px; /* टेक्स्ट का आकार */
+        }
+
+
+        button {
+            padding: 10px 15px; /* Increased padding */
+            font-size: 16px; /* Increased font-size */
+            background-color: rgb(255, 255, 10);
+            color: brown;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                max-width: 100%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            li {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+
+            button {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Non-Veg Food Menu</h1>
+        <ul id="food-list">
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🍗</span>
+                    <span class="food-name">Butter Chicken</span>
+                </div>
+                <button class="order-btn" data-food="Butter Chicken"><a href="Non1.html">Go To Recipe</a></button>
+            </li>
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🍲</span>
+                    <span class="food-name">Hyderabadi Dum Biryani</span>
+                </div>
+                <button class="order-btn" data-food="Hyderabadi Dum Biryani"><a href="Non2.html">Go To Recipe</a></button>
+            </li>
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🐟</span>
+                    <span class="food-name">Fish Curry</span>
+                </div>
+                <button class="order-btn" data-food="Fish Curry"><a href="Non3.html">Go To Recipe</a></button>
+            </li>
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🍳</span>
+                    <span class="food-name">Egg Curry</span>
+                </div>
+                <button class="order-btn" data-food="Egg Curry"><a href="Non4.html">Go To Recipe</a></button>
+            </li>
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🍖</span>
+                    <span class="food-name">Tandoori Chicken</span>
+                </div>
+                <button class="order-btn" data-food="Tandoori Chicken"><a href="Non5.html">Go To Recipe</a></button>
+            </li>
+            
+   
+             </ul>
+  
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food List</title>
+    <style>
+        /* Existing CSS */
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://thumbs.dreamstime.com/z/sushi-japanese-food-white-japanese-plate-white-background-sushi-japanese-food-white-japanese-plate-white-317241517.jpg?ct=jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; /* Center the background image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(248, 243, 243, 0.7); /* More transparent background */
+    border: 2px solid rgb(168, 80, 80); /* Black border */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Enhanced black box shadow */
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+
+        
+        h1 {
+            font-size: 28px; /* Increased font-size */
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-in-out;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            font-size: 20px; /* Increased font-size */
+            margin: 15px 0; /* Increased margin */
+            color: #050101;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+       
+        .food-container {
+            display: flex;
+            align-items: center;
+        }
+
+      .emoji {
+            font-size: 80px; /* इमोजी का आकार */
+            margin-right: 10px; /* इमोजी और टेक्स्ट के बीच का अंतर */
+        }
+
+      .food-name {
+            font-size: 20px; /* टेक्स्ट का आकार */
+        }
+
+
+        button {
+            padding: 10px 15px; /* Increased padding */
+            font-size: 16px; /* Increased font-size */
+            background-color: rgb(255, 255, 10);
+            color: brown;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                max-width: 100%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            li {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+
+            button {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Non-Veg Food Menu</h1>
+        <ul id="food-list">
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🍗</span>
+                    <span class="food-name">Butter Chicken</span>
+                </div>
+                <button class="order-btn" data-food="Butter Chicken"><a href="Non1.html">Go To Recipe</a></button>
+            </li>
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🍲</span>
+                    <span class="food-name">Hyderabadi Dum Biryani</span>
+                </div>
+                <button class="order-btn" data-food="Hyderabadi Dum Biryani"><a href="Non2.html">Go To Recipe</a></button>
+            </li>
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🐟</span>
+                    <span class="food-name">Fish Curry</span>
+                </div>
+                <button class="order-btn" data-food="Fish Curry"><a href="Non3.html">Go To Recipe</a></button>
+            </li>
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🍳</span>
+                    <span class="food-name">Egg Curry</span>
+                </div>
+                <button class="order-btn" data-food="Egg Curry"><a href="Non4.html">Go To Recipe</a></button>
+            </li>
+            <li>
+                <div class="food-container">
+                    <span class="emoji">🍖</span>
+                    <span class="food-name">Tandoori Chicken</span>
+                </div>
+                <button class="order-btn" data-food="Tandoori Chicken"><a href="Non5.html">Go To Recipe</a></button>
+            </li>
+            
+   
+             </ul>
+  
+    </div>
+    <a href="s.html"><button>Add Recipe</button></a>
+    <a href="ho2"><button class="ho2">Home</button></a>
+</body>
+</html>

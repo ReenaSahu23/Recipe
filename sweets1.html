@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulab Jamun Recipe</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/026/516/220/large_2x/delicious-gulab-jamun-dark-background-with-empty-space-for-text-free-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 50px;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+</style>
+       
+</head>
+<body>
+    <div class="right-side-buttons">
+        <img src="https://img.icons8.com/ios-filled/50/000000/facebook-like.png" alt="Like" id="likeButton">
+        <a href="sweetcon.html"><button id="backButton">Back</button></a>
+        <a href="sweets2.html"><button id="nextButton">Next</button></a>
+    </div>
+
+    <!--Main Container-->
+    <div class="container">
+        <h1>Gulab Jamun Recipe</h1>
+
+        <!-- Recipe Ingredients -->
+      <div class="recipe-ingredients">
+            <h2>Ingredients</h2>
+            <ul>
+                <li>Khoya - 1 cup</li>
+                <li>Paneer - 1/4 cup</li>
+                <li>Flour - 2 tbsp</li>
+                <li>Baking Powder - 1/4 tsp</li>
+                <li>Milk - 2 tbsp</li>
+                <li>Sugar - 2 cups</li>
+                <li>Water - 1.5 cups</li>
+                <li>Ghee - for frying</li>
+            </ul>
+        </div>
+
+        <!-- Instructions Section -->
+        <div class="recipe-instructions">
+            <h2>Instructions</h2>
+            <ol>
+                <li>Mix khoya, paneer, flour, and baking powder to form a soft dough.</li>
+                <li>Shape the dough into smooth balls.</li>
+                <li>Heat ghee and fry the balls until golden brown.</li>
+                <li>Soak in warm sugar syrup for 2-3 hours.</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <script>
+
+        document.getElementById('likeButton').addEventListener('click', () => {
+            alert('Like button clicked');
+        });
+
+        document.getElementById('backButton').addEventListener('click', () => {
+            alert('Back button clicked');
+        });
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            alert('Next button clicked');
+        });
+    </script>
+</body>
+</html>

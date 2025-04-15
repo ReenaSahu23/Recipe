@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liked Recipes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+        }
+        .recipe-container {
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 600px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            border: none;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+        .back-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            right: 120px;
+            top: 32%;
+            transform: translateY(-50%);
+        }
+        .back-buttons button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px; /* Match the border-radius of recipe containers */
+        }
+        .back-buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liked Recipes</h1>
+    <div id="recipeList"></div>
+
+    <div class="back-buttons">
+        <button onclick="window.location.href='Veg1.html'">Back to Recipe Page</button>
+        <button onclick="window.location.href='Veg2.html'">Back to Recipe Page</button>
+        <button onclick="window.location.href='Veg3.html'">Back to Recipe Page</button>
+        <button onclick="window.location.href='Veg4.html'">Back to Recipe Page</button>
+        <button onclick="window.location.href='Veg5.html'">Back to Recipe Page</button>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const recipeList = document.getElementById('recipeList');
+            const likedRecipes = JSON.parse(localStorage.getItem('likedRecipes')) || [];
+            if (likedRecipes.length > 0) {
+                likedRecipes.forEach(recipeName => {
+                    const recipeDiv = document.createElement('div');
+                    recipeDiv.className = 'recipe-container';
+                    recipeDiv.innerHTML = `
+                        <span>${recipeName}</span>
+                        <button class="delete-btn" onclick="deleteRecipe('${recipeName}')">X</button>
+                        
+                    `;
+                    recipeList.appendChild(recipeDiv);
+                });
+            } else {
+                recipeList.innerHTML = 'No liked recipes found.';
+            }
+        };
+
+        function deleteRecipe(recipeName) {
+            let likedRecipes = JSON.parse(localStorage.getItem('likedRecipes')) || [];
+            likedRecipes = likedRecipes.filter(name => name !== recipeName);
+            localStorage.setItem('likedRecipes', JSON.stringify(likedRecipes));
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

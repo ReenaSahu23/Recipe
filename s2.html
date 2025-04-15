@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Recipes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .recipe {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            background-color: #fafafa;
+            position: relative;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .recipe h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            word-break: break-word;
+        }
+
+        .recipe p {
+            margin: 5px 0;
+            font-size: 1rem;
+            word-break: break-word;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            background-color: #f7f42f;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .buttons a:hover {
+            background-color: #dfd029;
+        }
+
+        @media (max-width: 768px) {
+            .recipe h2 {
+                font-size: 1.25rem;
+            }
+
+            .recipe p {
+                font-size: 0.875rem;
+            }
+
+            .buttons a {
+                font-size: 0.875rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .recipe h2 {
+                font-size: 1rem;
+            }
+
+            .recipe p {
+                font-size: 0.75rem;
+            }
+
+            .buttons a {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stored Recipes</h1>
+        <div id="recipeList">
+            <!-- Recipes will be loaded here -->
+        </div>
+
+        <div class="buttons">
+            <a href="s.html">Add Recipe</a>
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+
+    <script>
+        function displayRecipes() {
+            const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+            const recipeListDiv = document.getElementById('recipeList');
+
+            if (recipes.length === 0) {
+                recipeListDiv.innerHTML = '<p>No recipes stored yet.</p>';
+            } else {
+                recipeListDiv.innerHTML = recipes.map((recipe, index) => `
+                    <div class="recipe">
+                        <h2>${recipe.name}</h2>
+                        <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
+                        <p><strong>Instructions:</strong> ${recipe.instructions}</p>
+                        <button class="delete-btn" onclick="deleteRecipe(${index})">Delete</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function deleteRecipe(index) {
+            let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+            recipes.splice(index, 1);
+            localStorage.setItem('recipes', JSON.stringify(recipes));
+            displayRecipes(); // Refresh the recipe list
+        }
+
+        window.onload = displayRecipes;
+    </script>
+</body>
+</html>
